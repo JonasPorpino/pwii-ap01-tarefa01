@@ -6,10 +6,10 @@ const verify = require('../utils/verifyToken');
 const alunoController = require('../controllers/alunoController');
 
 
-router.get('/', alunoController.alunosList);
-router.get('/:id', alunoController.alunosRead);
-router.post('/', alunoController.alunosCreate);
-router.put('/:id', alunoController.alunosUpdate);
-router.delete('/:id', alunoController.alunosDelete);
+router.get('/',verify, alunoController.alunosList);
+router.get('/:id', verify, alunoController.alunosRead);
+router.post('/', verify, alunoController.alunosCreate);
+router.put('/:id', verify, alunoController.alunosUpdate);
+router.delete('/:id', verify, alunoController.alunosDelete);
 
 module.exports = router;
