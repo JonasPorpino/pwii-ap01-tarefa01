@@ -5,7 +5,7 @@ const verify = require('../utils/verifyToken');
 // Importa o controller
 const alunoController = require('../controllers/alunoController');
 
-
+//router.get('/create', createTable);
 router.get('/',verify, alunoController.alunosList);
 router.get('/:id', verify, alunoController.alunosRead);
 router.post('/', verify, alunoController.alunosCreate);
